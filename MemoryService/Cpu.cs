@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class CpuMemory
+    internal class Cpu
     {
-        public CpuMemory(Console console)
+        public Cpu(Console console)
         {
             Console = console;
         }
