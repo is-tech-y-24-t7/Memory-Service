@@ -48,6 +48,7 @@ namespace MemoryService
                 return false;
             }
 
+
             System.Console.Write("iNES Mapper Number: " + Cartridge.MapperNumber.ToString());
 
             switch (Cartridge.MapperNumber)

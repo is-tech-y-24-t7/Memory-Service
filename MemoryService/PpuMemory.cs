@@ -13,7 +13,6 @@ namespace MemoryService
         readonly byte[] _paletteRam;
 
         public PpuMemory(Console console) => Console = console;
-
         public Console Console { get; }
 
         public override byte Read(ushort address) => address switch

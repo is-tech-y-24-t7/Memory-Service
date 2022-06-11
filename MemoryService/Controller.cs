@@ -8,5 +8,6 @@ namespace MemoryService
 {
     internal class Controller
     {
+
     }
 }

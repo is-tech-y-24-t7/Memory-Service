@@ -14,7 +14,6 @@ namespace MemoryService
         }
 
         public Console Console { get; }
-
         internal void Reset()
         {
             throw new NotImplementedException();

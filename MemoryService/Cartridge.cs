@@ -16,6 +16,7 @@ namespace MemoryService
         }
 
         public bool Invalid { get; internal set; }
+
         public object MapperNumber { get; internal set; }
     }
 }
