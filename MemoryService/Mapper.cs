@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    public class Console
+    public abstract class Mapper
     {
-        public readonly Ppu Ppu;
-        public readonly Controller Controller;
-        public Mapper Mapper { get; private set; }
+        public abstract byte Read(ushort address);
+        public abstract void Write(ushort address, byte data);
     }
 }

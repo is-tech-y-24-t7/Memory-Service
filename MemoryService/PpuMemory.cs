@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class PpuMemory
+    public class PpuMemory
     {
     }
 }
