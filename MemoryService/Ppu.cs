@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class CpuMemory
+    internal class Ppu
     {
-        public CpuMemory(Console console)
+        public Ppu(Console console)
         {
             Console = console;
         }
 
         public Console Console { get; }
+
         internal void Reset()
         {
             throw new NotImplementedException();
