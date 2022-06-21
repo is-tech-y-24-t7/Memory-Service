@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    public abstract class Mapper
+    internal class Mapper
     {
-        public abstract byte Read(ushort address);
-        public abstract void Write(ushort address, byte data);
+        internal byte Read(ushort address)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Write(ushort address, byte data)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int VramAddressToIndex(ushort address)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,22 +6,14 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Ppu
+    internal class Cpu
     {
-        public Ppu(Console console)
+        public Cpu(Console console)
         {
             Console = console;
         }
-      
-        public void WriteToRegister(ushort address, byte data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public byte ReadFromRegister(ushort address)
 
         public Console Console { get; }
-
         internal void Reset()
         {
             throw new NotImplementedException();

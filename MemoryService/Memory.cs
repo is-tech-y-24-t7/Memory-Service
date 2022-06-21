@@ -14,7 +14,7 @@ namespace MemoryService
 
         public void ReadBuf(byte[] buffer, ushort address, ushort size)
         {
-            for (int i = 0; i < size; i++)
+            for (var i = 0; i < size; i++)
             {
                 var readAddress = (ushort)(address + i);
                 buffer[i] = Read(readAddress);
