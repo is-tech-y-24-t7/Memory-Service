@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    /// <summary>
-    /// Base class for all memory classes.
-    /// </summary>
     public abstract class Memory
     {
         public abstract byte Read(ushort address);
@@ -53,7 +50,7 @@ namespace MemoryService
             if ((address & 0xFF) == 0xFF)
             {
                 byte lo = Read(address);
-                byte hi = Read((ushort)(address & 0x00)); 
+                byte hi = Read((ushort)(address & 0x00));
                 data = (ushort)((hi << 8) | lo);
             }
             else

@@ -12,6 +12,13 @@ namespace MemoryService
         {
             Console = console;
         }
+      
+        public void WriteToRegister(ushort address, byte data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte ReadFromRegister(ushort address)
 
         public Console Console { get; }
 

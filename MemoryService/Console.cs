@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class Console
+    public class Console
     {
         public Cpu Cpu { get; }
 
