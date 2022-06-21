@@ -11,6 +11,11 @@ namespace MemoryService
         private readonly byte[] _internalRam = new byte[2048];
         private readonly Console _console;
 
+        public CpuMemory(Console console)
+        {
+            _console = console;
+        }
+
         private static ushort HandleInternalRamMirror(ushort address)
         {
             return (ushort)(address % 0x800);
@@ -90,6 +95,11 @@ namespace MemoryService
             }
 
             return data;
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
         }
 
         public override void Write(ushort address, byte data)
