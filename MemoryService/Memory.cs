@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    /// <summary>
-    /// Base class for all memory classes.
-    /// </summary>
+  
     public abstract class Memory
     {
         public abstract byte Read(ushort address);

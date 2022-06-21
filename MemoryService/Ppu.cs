@@ -14,6 +14,7 @@ namespace MemoryService
         }
 
         public Console Console { get; }
+        public byte[] BitmapData { get; internal set; }
 
         internal void Reset()
         {
