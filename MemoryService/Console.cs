@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MemoryService
@@ -22,6 +24,7 @@ namespace MemoryService
 
         public Action<byte[]> DrawAction { get; set; }
         public Mapper Mapper { get; private set; }
+        public bool Stop { get; set; }
 
 
         private bool _frameEvenOdd;
@@ -82,6 +85,28 @@ namespace MemoryService
 
             _frameEvenOdd = false;
             return true;
+
+        }
+
+        public void Start()
+        {
+            Stop = false;
+            byte[] bitmapData = Ppu.BitmapData;
+
+            while (!Stop)
+            {
+                Stopwatch watch = Stopwatch.StartNew();
+                GoUntilFrame();
+                watch.Stop();
+                long timeTaken = watch.ElapsedMilliseconds;
+                int sleepTime = (int)(1000.0 / 60 - timeTaken);
+                Thread.Sleep(Math.Max(sleepTime, 0));
+            }
+        }
+
+        private void GoUntilFrame()
+        {
+            throw new NotImplementedException();
         }
 
         public void DrawFrame()

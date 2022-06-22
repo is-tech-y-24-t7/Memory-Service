@@ -1,6 +1,6 @@
 ﻿namespace MemoryService
 {
-    internal class NromMapper : Mapper
+    public class NromMapper : Mapper
     {
         private Console console;
 
