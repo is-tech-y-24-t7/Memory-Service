@@ -13,6 +13,11 @@ namespace MemoryService
             Console = console;
         }
 
+        public int Step()
+        {
+            throw new NotImplementedException();
+        }
+
         public Console Console { get; }
         internal void Reset()
         {

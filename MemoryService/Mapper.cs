@@ -8,20 +8,24 @@ namespace MemoryService
 {
     public class Mapper
     {
-        internal byte Read(ushort address)
+        public byte Read(ushort address)
         {
             throw new NotImplementedException();
         }
 
-        internal void Write(ushort address, byte data)
+        public void Write(ushort address, byte data)
         {
             throw new NotImplementedException();
         }
 
-        internal int VramAddressToIndex(ushort address)
+        public int Step()
         {
             throw new NotImplementedException();
         }
 
+        public int VramAddressToIndex(ushort address)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
