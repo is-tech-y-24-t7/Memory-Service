@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Ppu
+    public class Ppu
     {
         public Ppu(Console console)
         {

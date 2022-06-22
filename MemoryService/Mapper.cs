@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Mapper
+    public class Mapper
     {
         internal byte Read(ushort address)
         {

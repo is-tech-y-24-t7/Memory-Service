@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Controller
+    public class Controller
     {
 
     }

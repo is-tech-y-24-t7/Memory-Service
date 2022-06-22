@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Cartridge
+    public class Cartridge
     {
         private string path;
 

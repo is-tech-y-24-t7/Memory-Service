@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class CpuMemory
+    public class CpuMemory
     {
         public CpuMemory(Console console)
         {

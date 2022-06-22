@@ -1,6 +1,6 @@
 ﻿namespace MemoryService
 {
-    internal class UxRomMapper : Mapper
+    public class UxRomMapper : Mapper
     {
         private Console console;
 

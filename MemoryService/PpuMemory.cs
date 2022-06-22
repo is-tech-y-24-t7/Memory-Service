@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class PpuMemory : Memory
+    public class PpuMemory : Memory
     {
         readonly Console _console;
         readonly byte[] _paletteRam;
         readonly byte[] _vRam;
 
-        public PpuMemory(Console console) => Console = console;
-        public Console Console { get; }
+        public PpuMemory(Console console)
+        {
+            _console = console;
+            _paletteRam = new byte[32];
+            _vRam = new byte[2048];
+        }
+
 
         public override byte Read(ushort address) => address switch
         {
