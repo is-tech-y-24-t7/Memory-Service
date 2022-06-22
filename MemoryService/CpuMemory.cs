@@ -99,7 +99,7 @@ namespace MemoryService
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            Array.Clear(_internalRam, 0, _internalRam.Length);
         }
 
         public override void Write(ushort address, byte data)
