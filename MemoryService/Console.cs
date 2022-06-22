@@ -20,7 +20,7 @@ namespace MemoryService
 
         public Cartridge Cartridge { get; private set; }
 
-        
+        public Action<byte[]> DrawAction { get; set; }
         public Mapper Mapper { get; private set; }
 
 
@@ -82,6 +82,27 @@ namespace MemoryService
 
             _frameEvenOdd = false;
             return true;
+        }
+
+        public void DrawFrame()
+        {
+            DrawAction(Ppu.BitmapData);
+            _frameEvenOdd = !_frameEvenOdd;
+        }
+
+        private void GoUntilFrame()
+        {
+            var original = _frameEvenOdd;
+            while (original == _frameEvenOdd)
+            {
+                var cycles = Cpu.Step() * 3;
+
+                for (var i = 0; i < cycles; i++)
+                {
+                    Ppu.Step();
+                    Mapper.Step();
+                }
+            }
         }
     }
 }

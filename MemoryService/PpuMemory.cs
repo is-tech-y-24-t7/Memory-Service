@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class PpuMemory : Memory
+    public class PpuMemory : Memory
     {
         readonly Console _console;
         readonly byte[] _vRam;
