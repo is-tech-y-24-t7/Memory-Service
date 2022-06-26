@@ -104,10 +104,6 @@ namespace MemoryService
             }
         }
 
-        private void GoUntilFrame()
-        {
-            throw new NotImplementedException();
-        }
 
         public void DrawFrame()
         {
