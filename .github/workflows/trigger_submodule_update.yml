@@ -1,0 +1,20 @@
+name: Trigger-submodule-update
+
+on: 
+  push:
+    branches:
+      - master
+      - main
+
+jobs: 
+  trigger-submodule-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2.0.0
+        with:
+          token: ${{ secrets.TOKEN }}
+          repository: is-tech-y-24-t7/NesEmulator
+          event-type: update-submodule
+          client-payload: '{"submodule_name" : "Memory-Service"}'
