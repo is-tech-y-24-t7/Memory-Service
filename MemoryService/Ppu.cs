@@ -8,8 +8,7 @@ namespace MemoryService
 {
     public class Ppu
     {
-        public byte[] BitmapData { get; }
-
+       
         public Ppu(Console console)
         {
             Console = console;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
@@ -227,5 +227,4 @@ namespace MemoryService
                     break;
             }
         }
-    }
-}
+using System.Windows.Forms;
