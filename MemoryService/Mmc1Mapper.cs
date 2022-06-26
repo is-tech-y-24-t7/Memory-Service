@@ -1,6 +1,6 @@
 ﻿namespace MemoryService
 {
-    internal class Mmc1Mapper : Mapper
+    public class Mmc1Mapper : Mapper
     {
         private Console console;
 

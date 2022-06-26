@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Controller
+    public class Controller
     {
+        public byte ReadControllerOutput()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void WriteControllerInput(byte input)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

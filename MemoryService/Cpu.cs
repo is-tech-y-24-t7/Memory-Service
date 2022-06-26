@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Cpu
+    public class Cpu
     {
         public Cpu(Console console)
         {
             Console = console;
+        }
+
+        public int Step()
+        {
+            throw new NotImplementedException();
         }
 
         public Console Console { get; }

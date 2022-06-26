@@ -6,16 +6,34 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    internal class Ppu
+    public class Ppu
     {
+        public byte[] BitmapData { get; }
+
         public Ppu(Console console)
         {
             Console = console;
         }
+      
+        public void WriteToRegister(ushort address, byte data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte ReadFromRegister(ushort address)
+        {
+            throw new NotSupportedException();
+        }
+
+        public int Step()
+        {
+            throw new NotImplementedException();
+        }
 
         public Console Console { get; }
+        public byte[] BitmapData { get; internal set; }
 
-        internal void Reset()
+        public void Reset()
         {
             throw new NotImplementedException();
         }

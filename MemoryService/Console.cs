@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class Console
+    public class Console
     {
         public Cpu Cpu { get; }
 
@@ -20,8 +22,9 @@ namespace MemoryService
 
         public Cartridge Cartridge { get; private set; }
 
-        
+        public Action<byte[]> DrawAction { get; set; }
         public Mapper Mapper { get; private set; }
+        public bool Stop { get; set; }
 
 
         private bool _frameEvenOdd;
@@ -82,6 +85,49 @@ namespace MemoryService
 
             _frameEvenOdd = false;
             return true;
+
+        }
+
+        public void Start()
+        {
+            Stop = false;
+            byte[] bitmapData = Ppu.BitmapData;
+
+            while (!Stop)
+            {
+                Stopwatch watch = Stopwatch.StartNew();
+                GoUntilFrame();
+                watch.Stop();
+                long timeTaken = watch.ElapsedMilliseconds;
+                int sleepTime = (int)(1000.0 / 60 - timeTaken);
+                Thread.Sleep(Math.Max(sleepTime, 0));
+            }
+        }
+
+        private void GoUntilFrame()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DrawFrame()
+        {
+            DrawAction(Ppu.BitmapData);
+            _frameEvenOdd = !_frameEvenOdd;
+        }
+
+        private void GoUntilFrame()
+        {
+            var original = _frameEvenOdd;
+            while (original == _frameEvenOdd)
+            {
+                var cycles = Cpu.Step() * 3;
+
+                for (var i = 0; i < cycles; i++)
+                {
+                    Ppu.Step();
+                    Mapper.Step();
+                }
+            }
         }
     }
 }

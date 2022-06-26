@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace MemoryService
 {
-    class PpuMemory : Memory
+    public class PpuMemory : Memory
     {
         readonly Console _console;
-        readonly byte[] _vRam;
         readonly byte[] _paletteRam;
+        readonly byte[] _vRam;
 
-        public PpuMemory(Console console) => Console = console;
-        public Console Console { get; }
+        public PpuMemory(Console console)
+        {
+            _console = console;
+            _paletteRam = new byte[32];
+            _vRam = new byte[2048];
+        }
+
 
         public override byte Read(ushort address) => address switch
         {
@@ -41,17 +46,18 @@ namespace MemoryService
             }
         }
 
-        internal static void Reset()
-        {
-            throw new NotImplementedException();
-        }
-
         public ushort GetPaletteRamIndex(ushort address)
         {
             var index = (ushort)((address - 0x3F00) % 32);
             if (index >= 16 && (index - 16) % 4 == 0) 
                 return (ushort)(index - 16);
             return index;
+        }
+
+        public void Reset()
+        {
+            Array.Clear(_paletteRam, 0, _paletteRam.Length);
+            Array.Clear(_vRam, 0, _vRam.Length);
         }
 
     }
